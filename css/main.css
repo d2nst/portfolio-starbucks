@@ -35,11 +35,76 @@ a {
   position: relative;
 }
 
+.btn {
+  width: 130px;
+  padding: 10px;
+  border: 2px solid #333;
+  border-radius: 4px;
+  color: #333;
+  font-size: 16px;
+  text-align: center;
+  font-weight: 700;
+  cursor: pointer;
+  box-sizing: border-box;
+  display: block;
+  transition: 0.4s;
+}
+
+.btn:hover {
+  background: #333;
+  color: #fff;
+}
+
+.btn.btn--reverse {
+  background: #333;
+  color: #fff;
+}
+
+.btn.btn--reverse:hover {
+  background: transparent;
+  color: #333;
+}
+
+.btn.btn--brown {
+  border-color: #592b18;
+  color: #592b18;
+}
+
+.btn.btn--brown:hover {
+  background: #592b18;
+  color: #fff;
+}
+
+.btn.btn--gold {
+  color: #d9aa8a;
+  border-color: #d9aa8a;
+}
+
+.btn.btn--gold:hover {
+  color: #fff;
+  background: #d9aa8a;
+}
+
+.btn.btn--white {
+  color: #fff;
+  border-color: #fff;
+}
+
+.btn.btn--white:hover {
+  color: #333;
+  background-color: #fff;
+}
+
 /* layout */
 /* -------- HEADER -------- */
 header {
+  /* position: relative; */
+  position: fixed;
+  top: 0;
+  width: 100%;
   background: #f6f5f0;
   border-bottom: 1px solid #c8c8c8;
+  z-index: 9;
 }
 
 header > .inner {
@@ -146,9 +211,6 @@ header .main-menu {
   z-index: 1;
 }
 
-header .main-menu .item {
-}
-
 header .main-menu .item .item__name {
   padding: 10px 20px 34px 20px;
   font-family: var(--english-font);
@@ -216,4 +278,66 @@ header .main-menu .item .item__contents .contents__texture h4 {
 header .main-menu .item .item__contents .contents__texture p {
   color: #690;
   margin: 4px 0 14px;
+}
+
+/* bages */
+header .badges {
+  position: absolute;
+  top: 132px;
+  right: 12px;
+}
+
+header .badges .badge {
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 12px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+}
+
+/* -------- SECTION -------- */
+/* --- visual */
+.visual {
+  margin-top: 120px;
+  background-image: url('../images/visual_bg.jpeg');
+  background-position: center;
+}
+
+.visual .inner {
+  width: 100%;
+  height: 646px;
+}
+
+.visual .title {
+  position: absolute;
+  top: 29%;
+  left: 6.5%;
+  width: 20%;
+}
+
+.visual .title .btn {
+  position: absolute;
+  top: 120%;
+  left: 30%;
+}
+
+.visual .drink1 {
+  position: absolute;
+  top: 22%;
+  left: 52%;
+  width: 19.8%;
+}
+
+.visual .drink2 {
+  position: absolute;
+  top: 10.9%;
+  left: 35%;
+  width: 18.9%;
+}
+
+.visual .drink3 {
+  position: absolute;
+  top: 8%;
+  right: 12%;
+  width: 18.9%;
 }
