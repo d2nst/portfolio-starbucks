@@ -45,6 +45,13 @@
     <!-- gasp JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"></script>
 
+    <!-- swiper CSS & JS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
     <script defer src="./js/main.js"></script>
   </head>
   <body>
@@ -385,9 +392,10 @@
     <!-- HEADER END -->
 
     <!-- SECTION -->
+    <!-- visual -->
     <section class="visual">
       <div class="inner">
-        <div class="title">
+        <div class="title fade-in">
           <img src="./images/visual_title.png" alt="AROUND AUTUMN, AROUND US" />
           <a href="javascript:void(0)" class="btn btn--brown">자세히 보기</a>
         </div>
@@ -395,18 +403,158 @@
         <img
           src="./images/visual_main_drink1.png"
           alt="블랙 글레이즈드 라떼"
-          class="drink1 img"
+          class="drink1 img fade-in"
         />
         <img
           src="./images/visual_main_drink2.png"
           alt="그린 애플 캐모마일 티"
-          class="drink2 img"
+          class="drink2 img fade-in"
         />
         <img
           src="./images/visual_main_drink3.png"
           alt="호두 블랙 티 라떼"
-          class="drink3 img"
+          class="drink3 img fade-in"
         />
+      </div>
+    </section>
+
+    <!-- notice -->
+    <section class="notice">
+      <div class="notice-line">
+        <div class="bg-left"></div>
+        <div class="bg-right"></div>
+        <div class="inner">
+          <div class="inner__left">
+            <h2>공지사항</h2>
+            <div class="swiper-container">
+              <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide">
+                  <a href="javascript:void(0)">시스템 개선 및 점검 안내</a>
+                </div>
+                <div class="swiper-slide">
+                  <a href="javascript:void(0)"
+                    >개인정보처리방침 및 영상정보처리기기 운영관리 방침 개정
+                    안내</a
+                  >
+                </div>
+                <div class="swiper-slide">
+                  <a href="javascript:void(0)"
+                    >고객의 소리 답변 운영 기준 변경 안내
+                  </a>
+                </div>
+
+                <div class="swiper-slide">
+                  <a href="javascript:void(0)"
+                    >홈페이지 / 비회원 이용약관 개정 안내
+                  </a>
+                </div>
+              </div>
+            </div>
+            <a href="javascript:void(0)" class="notice-line__more">
+              <div class="material-icons">add_circle</div>
+            </a>
+          </div>
+          <div class="inner__right">
+            <h2>스타벅스 프로모션</h2>
+            <div class="toggle-promotion">
+              <div class="material-icons">upload</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="promotion">
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img
+                src="./images/promotion_slide1.jpeg"
+                alt="우리 모두의 가을, 스타벅스와 함께 풍성하게 즐겨보세요!"
+              />
+              <a href="javascript:void(0)" class="btn">자세히 보기</a>
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="./images/promotion_slide2.jpeg"
+                alt="회원 계정에 등록된 스타벅스 카드로 결제 시, 1만원 당 별 1개를 즉시 추가로 드립니다!"
+              />
+              <a href="javascript:void(0)" class="btn">자세히 보기</a>
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="./images/promotion_slide3.jpeg"
+                alt="스타벅스 리저브 오텀 원두&커피"
+              />
+              <a href="javascript:void(0)" class="btn">자세히 보기</a>
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="./images/promotion_slide4.png"
+                alt="우리 모두의 가을, 스타벅스와 함께 풍성하게 즐겨보세요!"
+              />
+              <a href="javascript:void(0)" class="btn">자세히 보기</a>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-prev">
+          <div class="material-icons">arrow_back</div>
+        </div>
+        <div class="swiper-next">
+          <div class="material-icons">arrow_forward</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- rewards -->
+    <!-- <section class="rewards">
+      <div class="bg-left"></div>
+      <div class="bg-right"></div>
+      <div class="inner">
+        <div class="btn-group">
+          <div class="btn btn--reverse sign-up">회원가입</div>
+          <div class="btn sign-in">로그인</div>
+          <div class="btn gift">e-Gift 선물하기</div>
+        </div>
+      </div>
+    </section> -->
+
+    <section class="rewards">
+      <div class="inner">
+        <div class="rewards_logo">
+          <img src="./images/rewards-logo.png" alt="Starbucks Rewards" />
+        </div>
+        <div class="reawrds_conts">
+          <div class="info-cont">
+            <div class="info-cont_txt">
+              <h2>스타벅스만의 특별한 혜택, 스타벅스 리워드</h2>
+              <p>
+                스타벅스 회원이세요? 로그인을 통해 나만의 리워드를
+                확인해보세요.<br />
+                스타벅스 회원이 아니세요? 가입을 통해 리워드 혜택을 즐기세요.
+              </p>
+            </div>
+            <div class="info-cont_btn">
+              <div class="btn btn--green sign-up">회원가입</div>
+              <div class="btn btn--white sign-in">로그인</div>
+            </div>
+          </div>
+
+          <div class="gift-cont">
+            <div class="gift-cont_txt">
+              <p>
+                회원 가입 후, 스타벅스 e-Gift Card를 "나에게 선물하기"로
+                구매하시고, 편리하게 등록하세요! <br />
+                카드를 등록하여 스타벅스 리워드 회원이 되신 후, 첫 구매를 하시면
+                무료 음료쿠폰을 드립니다!
+              </p>
+            </div>
+            <div class="gift-cont_btn">
+              <div class="btn btn--white gift">e-Gift 선물하기</div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
     <!-- SECTION END-->
