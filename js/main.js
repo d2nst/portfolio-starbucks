@@ -18,6 +18,7 @@ serachInputEl.addEventListener('blur', function () {
 
 // 스크롤 시 배지 화면에 보여졌다가 사라지게
 const badgeEl = document.querySelector('header .badges');
+const toTopEl = document.querySelector('#to-top');
 
 window.addEventListener(
   'scroll',
@@ -29,15 +30,27 @@ window.addEventListener(
         opacity: 0,
         display: 'none',
       });
+      gsap.to(toTopEl, 0.2, {
+        x: 0,
+      });
     } else {
       gsap.to(badgeEl, 0.6, {
         opacity: 1,
         display: 'block',
       });
+      gsap.to(toTopEl, 0.2, {
+        x: 100,
+      });
     }
   }, 300)
 );
 // _.throttle(함수,시간)
+
+toTopEl.addEventListener('click', function () {
+  gsap.to(window, 0.8, {
+    scrollTo: 0,
+  });
+});
 
 // 섹션 - 음료 이미지 fade in 효과
 const fadeEls = document.querySelectorAll('.visual .fade-in');
@@ -80,6 +93,10 @@ new Swiper('.awards .swiper-container', {
   spaceBetween: 30,
   autoplay: true,
   loop: true,
+  navigation: {
+    prevEl: '.awards .swiper-prev',
+    nextEl: '.awards .swiper-next',
+  },
 });
 
 const promotionEl = document.querySelector('.promotion');
@@ -125,3 +142,7 @@ spyEls.forEach(function (spyEl) {
     .setClassToggle(spyEl, 'show')
     .addTo(new ScrollMagic.Controller());
 });
+
+//footer - 년도 자동 수정
+const thisYear = document.querySelector('.this-year');
+thisYear.textContent = new Date().getFullYear();
