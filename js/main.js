@@ -1,21 +1,3 @@
-//
-const searchEl = document.querySelector('.search');
-const serachInputEl = searchEl.querySelector('input');
-
-searchEl.addEventListener('click', function () {
-  serachInputEl.focus();
-});
-
-serachInputEl.addEventListener('focus', function () {
-  searchEl.classList.add('focused');
-  serachInputEl.setAttribute('placeholder', '통합검색');
-});
-
-serachInputEl.addEventListener('blur', function () {
-  searchEl.classList.remove('focused');
-  serachInputEl.setAttribute('placeholder', '');
-});
-
 // 스크롤 시 배지 화면에 보여졌다가 사라지게
 const badgeEl = document.querySelector('header .badges');
 const toTopEl = document.querySelector('#to-top');
@@ -142,7 +124,3 @@ spyEls.forEach(function (spyEl) {
     .setClassToggle(spyEl, 'show')
     .addTo(new ScrollMagic.Controller());
 });
-
-//footer - 년도 자동 수정
-const thisYear = document.querySelector('.this-year');
-thisYear.textContent = new Date().getFullYear();
