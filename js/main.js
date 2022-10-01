@@ -75,6 +75,13 @@ new Swiper('.promotion .swiper-container', {
   },
 });
 
+new Swiper('.awards .swiper-container', {
+  slidesPerView: 5,
+  spaceBetween: 30,
+  autoplay: true,
+  loop: true,
+});
+
 const promotionEl = document.querySelector('.promotion');
 const promotionToggleBtn = document.querySelector('.toggle-promotion');
 let isHidePromotion = false;
@@ -88,4 +95,33 @@ promotionToggleBtn.addEventListener('click', function () {
     // 보임 처리!
     promotionEl.classList.remove('hide');
   }
+});
+
+// youtube 영상 위에 아이콘 움직이기
+function random(min, max) {
+  return parseFloat((Math.random() * (max - min) + min).toFixed(2));
+}
+function floatingObject(selector, delay, size) {
+  gsap.to(selector, random(1.5, 2.5), {
+    y: size,
+    repeat: -1,
+    yoyo: true,
+    ease: Power1.easeInOut,
+    delay: random(0, delay),
+  });
+}
+
+floatingObject('.floating', 1, 15);
+floatingObject('.floating', 0.5, 15);
+floatingObject('.floating', 1.5, 20);
+
+// 전체 fade-left, fade-right animation 적용
+const spyEls = document.querySelectorAll('section.scroll-spy');
+spyEls.forEach(function (spyEl) {
+  new ScrollMagic.Scene({
+    triggerElement: spyEl, // 보여짐 여부를 감시할 요소를 지정
+    triggerHook: 0.8,
+  })
+    .setClassToggle(spyEl, 'show')
+    .addTo(new ScrollMagic.Controller());
 });
